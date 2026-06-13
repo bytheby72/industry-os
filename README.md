@@ -49,7 +49,16 @@ Layer 0: Hermes Agent             ← skills, cron, delegate_task, memory, tools
 | Financial Forensics | Bank statement parsing, bankruptcy detection |
 
 ### Methodology → [hermes-loop-skills](https://github.com/bytheby72/hermes-loop-skills)
-Loop engineering with 4 hardening skills: audit, harden, deploy, security.
+| Skill | What It Does |
+|-------|-------------|
+| **loop-engineering** | 14-step roadmap + 6 primitive mapping to Hermes tools |
+| **ci-triage** | Daily CI failure classification (flaky/infra/code), auto-retry, escalation |
+| **dep-bump** | Weekly dependency bumps in isolated worktrees → test → PR |
+| **issue-to-pr** | Maker+Checker pipeline: monitor → spawn agents → draft PR |
+| **loop-audit** | 14-step audit framework for existing loops |
+| **loop-harden** | P0 hardening: dry-run mode, no cronjobs until ready |
+| **loop-deploy** | 5-mode deployment pipeline (dry-run → full auto) |
+| **loop-security** | Threat modeling, fail-closed policy enforcement |
 
 ## Quick Start
 

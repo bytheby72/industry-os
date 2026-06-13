@@ -44,6 +44,8 @@ Foundation skills every autonomous system needs:
 | **auto-learning-pipeline** | 5-stage curator: discover → score → rank → ingest → learn. Builds institutional knowledge from experience. |
 | **skill-dependency-graph** | Visualize skill dependencies, detect circular references, suggest compositions. |
 
+External repo: [hermes-loop-skills](https://github.com/bytheby72/hermes-loop-skills) — methodology + 7 operational skills (ci-triage, dep-bump, issue-to-pr, loop-audit, loop-harden, loop-deploy, loop-security).
+
 ### Layer 2 — Swarm Management
 Orchestrates multiple agents working in parallel:
 
@@ -107,26 +109,22 @@ Long-running autonomous research and monitoring:
 ## Integration Points
 
 ```
-Hermes Agent
-  ├── skills/ (Layer 1 skills)
-  │     ├── devops/quality-gates
-  │     ├── devops/ratchet-loop
-  │     ├── devops/auto-learning-pipeline
-  │     └── devops/skill-dependency-graph
-  ├── skills/ (Layer 2 — swarm)
-  │     └── tera-harness
-  ├── skills/ (Layer 3 — business)
-  │     ├── data-science/iek-os-drive-sort
-  │     ├── iek-price-monitor
-  │     └── tender-pattern-analysis
-  ├── skills/ (Layer 3.5 — methodology)
-  │     └── devops/loop-engineering (+ audit, harden, deploy, security)
-  └── ~/fabric/ (shared memory across all layers)
-        ├── daily/
-        ├── people/
-        ├── companies/
-        ├── projects/
-        └── topics/
+Industry OS (this repo)
+  ├── devops/quality-gates
+  ├── devops/ratchet-loop
+  ├── devops/auto-learning-pipeline
+  └── devops/skill-dependency-graph
+
+External repos:
+  ├── [hermes-loop-skills]  ← methodology + 7 operational loop skills
+  ├── [tera-harness]        ← swarm management (registry, lanes, sweeper)
+  └── [anatoli-google-infra]← business OS (drive sort, CRM, 1C, analytics)
+
+Hermes Agent runtime:
+  ├── skills/ (all loaded skills)
+  ├── cron/ (scheduled jobs)
+  ├── fabric/ (shared memory)
+  └── config.yaml + .env
 ```
 
 ## Design Principles
